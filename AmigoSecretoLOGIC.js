@@ -16,6 +16,9 @@ function agregarAmigo(){
         }else{
             listaAmigos.push(nombre);
             document.getElementById("amigo").value = "";
+            /*let newParagraph = document.createElement('p');
+            newParagraph.textContent = `${nombre}`;*/
+            addItemToList(nombre);
             console.log(listaAmigos);
         }
     }
@@ -53,4 +56,16 @@ function inicializar(){
     listaAmigos = [];
     listaNumerosSorteados = [];
     amigoSecreto = "";
+    removeItem();
+}
+
+function addItemToList(name) {
+    let list = document.getElementById('listaAmigos');
+    let newItem = document.createElement('li');
+    newItem.textContent = name;
+    list.appendChild(newItem);
+}
+
+function removeItem(){
+    document.getElementById('listaAmigos').innerHTML = '';
 }
