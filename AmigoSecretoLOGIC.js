@@ -16,8 +16,6 @@ function agregarAmigo(){
         }else{
             listaAmigos.push(nombre);
             document.getElementById("amigo").value = "";
-            /*let newParagraph = document.createElement('p');
-            newParagraph.textContent = `${nombre}`;*/
             addItemToList(nombre);
             console.log(listaAmigos);
         }
@@ -26,10 +24,8 @@ function agregarAmigo(){
 
 function sortearAmigo(){
     let randomNumber = Math.floor(Math.random()*listaAmigos.length)
-    //console.log(`listaAmigos = ${listaAmigos.length} elementos`);
     
     if(listaNumerosSorteados.length == listaAmigos.length){
-        //asignarTextoElemento('p','¡Ya se terminaron los NOMBRES!')
         inicializar();
         alert("Se terminaron los nombres");
     } else {
