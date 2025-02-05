@@ -5,6 +5,7 @@ let amigoSecreto = "";
 
 inicializar();
 
+
 function agregarAmigo(){//funcion para agregar nombre a la lista al dar clic en boton 'Añadir'
     let nombre = document.getElementById("amigo").value;
     nombre = nombre.toUpperCase();
@@ -22,6 +23,7 @@ function agregarAmigo(){//funcion para agregar nombre a la lista al dar clic en 
         }
     }
 }
+
 
 function sortearAmigo(){//Funcion entrega el nombre de amigo secreto de forma aleatoria cada que dan clic en boton 'sortear amigo'
     let randomNumber = Math.floor(Math.random()*listaAmigos.length)//genera numero secreto para index de arreglo de nombres
@@ -41,11 +43,13 @@ function sortearAmigo(){//Funcion entrega el nombre de amigo secreto de forma al
     }
 }
 
+
 function textoElemento(id, texto){//funcion para asignar texto a un elemento direccionado con ID
     let elementoHTML = document.getElementById(id);
     elementoHTML.innerHTML = texto;
     return elementoHTML;
 }
+
 
 function inicializar(){//inicializa arreglos y parametros para volver a iniciar nueva lista de amigos
     textoElemento("miH2",`Digita el nombre de tus amigos`);
@@ -55,12 +59,14 @@ function inicializar(){//inicializa arreglos y parametros para volver a iniciar 
     LimpiarLista('lista');
 }
 
+
 function AgregarElementoLista(name) {//
     let list = document.getElementById('lista');
     let newItem = document.createElement('li');
     newItem.textContent = name;
     list.appendChild(newItem);
 }
+
 
 function LimpiarLista(list){
     document.getElementById(list).innerHTML = '';
